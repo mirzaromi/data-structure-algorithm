@@ -18,6 +18,22 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Add a new data from the head
+     *
+     **/
+    public <T> void addNodeFromHead(T data) {
+        Node<T> currentNode = head;
+        Node<T> newNode = new Node<>(data);
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            newNode.next = currentNode;
+            head = newNode;
+        }
+    }
+
+    /**
      * Remove a data from the tail
      *
      **/

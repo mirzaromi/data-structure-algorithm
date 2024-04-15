@@ -8,6 +8,8 @@ public class Main {
         singlyLinkedList.addNode(5);
         singlyLinkedList.addNode(6);
 
+        singlyLinkedList.addNodeFromHead(7);
+
 
         singlyLinkedList.removeNode();
         singlyLinkedList.display();
