@@ -37,7 +37,7 @@ public class SinglyLinkedList {
      * Remove a data from the tail
      *
      **/
-    public void removeNode() {
+    public void removeNodeFromTail() {
         if (head == null) {
             System.out.println("no data found");
         } else if (head==tail){
@@ -54,7 +54,7 @@ public class SinglyLinkedList {
     }
 
     /**
-     * Remove a data from the tail
+     * Remove a data from the head
      *
      **/
     public void removeNodeFromHead() {

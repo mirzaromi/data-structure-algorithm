@@ -11,7 +11,7 @@ public class Main {
         singlyLinkedList.addNodeFromHead(7);
         singlyLinkedList.removeNodeFromHead();
 
-        singlyLinkedList.removeNode();
+        singlyLinkedList.removeNodeFromTail();
         singlyLinkedList.display();
     }
 }
