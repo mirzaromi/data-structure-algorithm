@@ -69,19 +69,6 @@ public class SinglyLinkedList {
         }
     }
 
-    public void displayLast() {
-        Node current = head;
-        if (head == null) {
-            System.out.println("list is empty");
-        }
-
-        while (current != null && current.next != null) {
-            current = current.next;
-        }
-//        assert current != null;
-        System.out.println(current.data);
-    }
-
     public void display() {
         Node current = head;
 
