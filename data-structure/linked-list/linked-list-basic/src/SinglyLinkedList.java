@@ -2,16 +2,6 @@ public class SinglyLinkedList {
     public Node head = null;
     public Node tail = null;
 
-    class Node<T> {
-        public T data;
-        public Node<T> next;
-
-        public Node(T data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
     public <T> void addNode(T data) {
         Node<T> newNode = new Node<>(data);
 
@@ -28,12 +18,23 @@ public class SinglyLinkedList {
 
         if (head == null) {
             System.out.println("list is empty");
-        } else {
-            while (current != null) {
-                System.out.println(current.data);
-                current = current.next;
-            }
         }
+
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+
     }
 
+}
+
+class Node<T> {
+    public T data;
+    public Node<T> next;
+
+    public Node(T data) {
+        this.data = data;
+        this.next = null;
+    }
 }
