@@ -6,7 +6,7 @@ public class SinglyLinkedList {
      * Add a new data from the tail
      *
      **/
-    public <T> void addNode(T data) {
+    public <T> void addNodeFromTail(T data) {
         Node<T> newNode = new Node<>(data);
 
         if (head == null) {
