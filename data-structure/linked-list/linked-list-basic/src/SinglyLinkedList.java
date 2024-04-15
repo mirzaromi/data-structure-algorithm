@@ -53,6 +53,22 @@ public class SinglyLinkedList {
         }
     }
 
+    /**
+     * Remove a data from the tail
+     *
+     **/
+    public void removeNodeFromHead() {
+        Node current = head;
+        if (head == null) {
+            System.out.println("no data found");
+        } else if (head==tail){
+            head = null;
+            tail = null;
+        } else {
+            head = current.next;
+        }
+    }
+
     public void displayLast() {
         Node current = head;
         if (head == null) {

@@ -9,7 +9,7 @@ public class Main {
         singlyLinkedList.addNodeFromTail(6);
 
         singlyLinkedList.addNodeFromHead(7);
-
+        singlyLinkedList.removeNodeFromHead();
 
         singlyLinkedList.removeNode();
         singlyLinkedList.display();
