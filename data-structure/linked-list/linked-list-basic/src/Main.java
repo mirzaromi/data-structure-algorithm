@@ -13,5 +13,7 @@ public class Main {
 
         singlyLinkedList.removeNodeFromTail();
         singlyLinkedList.display();
+        System.out.println(singlyLinkedList.countNode());
+        singlyLinkedList.countAllNode();
     }
 }

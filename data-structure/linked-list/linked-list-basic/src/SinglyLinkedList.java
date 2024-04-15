@@ -83,6 +83,21 @@ public class SinglyLinkedList {
 
     }
 
+    public Integer countNode() {
+        Integer counter = 0;
+        Node current = head;
+        while (current != null) {
+            counter++;
+            current = current.next;
+        }
+
+        return counter;
+    }
+
+    public void countAllNode() {
+        System.out.println("total node is " + countNode());
+    }
+
 }
 
 
