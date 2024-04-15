@@ -9,6 +9,7 @@ public class Main {
         singlyLinkedList.addNode(6);
 
 
+        singlyLinkedList.removeNode();
         singlyLinkedList.display();
     }
 }
