@@ -69,6 +69,10 @@ public class SinglyLinkedList {
         }
     }
 
+    /**
+     * Display all linked list value
+     *
+     **/
     public void display() {
         Node current = head;
 
@@ -83,6 +87,10 @@ public class SinglyLinkedList {
 
     }
 
+    /**
+     * Count all nodes in the linked list
+     *
+     **/
     public Integer countNode() {
         Integer counter = 0;
         Node current = head;
@@ -94,6 +102,10 @@ public class SinglyLinkedList {
         return counter;
     }
 
+    /**
+     * Show the count nodes in the linked list
+     *
+     **/
     public void countAllNode() {
         System.out.println("total node is " + countNode());
     }
