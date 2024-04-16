@@ -34,7 +34,7 @@ public class SinglyLinkedList {
     }
 
     /**
-     * Add a new data from index with index start from zero
+     * Add a new data at index with index start from zero
      * @Param   index start from zero
      * @Param   data all types of data for the linked list
      **/
@@ -61,8 +61,6 @@ public class SinglyLinkedList {
                 currentNode.next = newNode;
             }
         }
-
-
     }
 
     /**
@@ -98,6 +96,34 @@ public class SinglyLinkedList {
             tail = null;
         } else {
             head = current.next;
+        }
+    }
+
+    /**
+     * Remove a new data at index with index start from zero
+     * @Param   index start from zero
+     * @Param   data all types of data for the linked list
+     **/
+    public <T> void removeNodeAddIndex(Integer index) {
+        Integer countAllNodes = countNode();
+        Integer maxIndex = countAllNodes-1;
+        if (index >= countAllNodes || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            Node<T> currentNode = head;
+
+            if (index == 0) {
+                removeNodeFromHead();
+            } else if (index == maxIndex) {
+                removeNodeFromTail();
+            } else {
+                int counter = 0;
+                while (currentNode != null && counter<index-1) {
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+                currentNode.next = currentNode.next.next;
+            }
         }
     }
 

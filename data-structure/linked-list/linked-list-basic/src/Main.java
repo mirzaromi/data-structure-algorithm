@@ -14,6 +14,7 @@ public class Main {
         singlyLinkedList.removeNodeFromTail();
 
         singlyLinkedList.addNodeAddIndex(2, 10);
+        singlyLinkedList.removeNodeAddIndex(2);
 
 
         singlyLinkedList.display();
