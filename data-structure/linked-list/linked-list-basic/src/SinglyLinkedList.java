@@ -1,6 +1,6 @@
 public class SinglyLinkedList {
-    public Node head = null;
-    public Node tail = null;
+    private Node head = null;
+    private Node tail = null;
 
     /**
      * Add a new data from the tail
@@ -151,10 +151,44 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Find node at index
+     * @Param   index start from zero
+     **/
+    public void findValueAtIndex(Integer index) {
+        if (head == null) {
+            System.out.println("list is empty");
+        }
+
+        Integer countAllNodes = countNode();
+        Integer maxIndex = countAllNodes-1;
+        if (index >= countAllNodes || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            if (index == 0) {
+                showValue(index, head.data);
+            } else if (index == maxIndex) {
+                showValue(index, tail.data);
+            } else {
+                Node currentNode = head;
+                int counter = 0;
+                while (currentNode != null && counter<index) {
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+                showValue(index, currentNode.data);
+            }
+        }
+    }
+
+    private  <T> void showValue(Integer index, T value) {
+        System.out.println("the value at index : " + index +  " is " + value);
+    }
+
+    /**
      * Count all nodes in the linked list
      *
      **/
-    public Integer countNode() {
+    private Integer countNode() {
         Integer counter = 0;
         Node current = head;
         while (current != null) {
@@ -173,6 +207,13 @@ public class SinglyLinkedList {
         System.out.println("total node is " + countNode());
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
 }
 
 

@@ -18,6 +18,7 @@ public class Main {
 
 
         singlyLinkedList.display();
+        singlyLinkedList.findValueAtIndex(2);
 
         singlyLinkedList.countAllNode();
     }
