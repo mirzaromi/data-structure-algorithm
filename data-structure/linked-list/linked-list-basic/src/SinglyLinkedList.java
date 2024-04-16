@@ -34,6 +34,38 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Add a new data from index with index start from zero
+     * @Param   index start from zero
+     * @Param   data all types of data for the linked list
+     **/
+    public <T> void addNodeAddIndex(Integer index, T data) {
+        Integer countAllNodes = countNode();
+        Integer maxIndex = countAllNodes-1;
+        if (index >= countAllNodes || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            Node<T> currentNode = head;
+            Node<T> newNode = new Node<>(data);
+
+            if (index == 0) {
+                addNodeFromHead(data);
+            } else if (index == maxIndex) {
+                addNodeFromTail(data);
+            } else {
+                int counter = 0;
+                while (currentNode != null && counter<index-1) {
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+            }
+        }
+
+
+    }
+
+    /**
      * Remove a data from the tail
      *
      **/

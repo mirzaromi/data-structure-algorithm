@@ -12,8 +12,12 @@ public class Main {
         singlyLinkedList.removeNodeFromHead();
 
         singlyLinkedList.removeNodeFromTail();
+
+        singlyLinkedList.addNodeAddIndex(2, 10);
+
+
         singlyLinkedList.display();
-        System.out.println(singlyLinkedList.countNode());
+
         singlyLinkedList.countAllNode();
     }
 }
