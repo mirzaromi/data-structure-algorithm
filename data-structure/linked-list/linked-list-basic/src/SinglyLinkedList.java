@@ -9,11 +9,14 @@ public class SinglyLinkedList {
     public <T> void addNodeFromTail(T data) {
         Node<T> newNode = new Node<>(data);
 
+        // if head is null then set head first
+        // else set in the next tail since the head and the tail have the same node
         if (head == null) {
             head = newNode;
         } else {
             tail.next = newNode;
         }
+        // track the new tail for new node
         tail = newNode;
     }
 
@@ -24,7 +27,8 @@ public class SinglyLinkedList {
     public <T> void addNodeFromHead(T data) {
         Node<T> currentNode = head;
         Node<T> newNode = new Node<>(data);
-
+        // if head is null set head first
+        // else set the current head to the newNode and set the head to the newNode
         if (head == null) {
             head = newNode;
         } else {
@@ -38,9 +42,10 @@ public class SinglyLinkedList {
      * @Param   index start from zero
      * @Param   data all types of data for the linked list
      **/
-    public <T> void addNodeAddIndex(Integer index, T data) {
+    public <T> void addNodeAtIndex(Integer index, T data) {
         Integer countAllNodes = countNode();
         Integer maxIndex = countAllNodes-1;
+        // validate the index is valid or not
         if (index >= countAllNodes || index < 0) {
             System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
         } else {
@@ -104,7 +109,7 @@ public class SinglyLinkedList {
      * @Param   index start from zero
      * @Param   data all types of data for the linked list
      **/
-    public <T> void removeNodeAddIndex(Integer index) {
+    public <T> void removeNodeAtIndex(Integer index) {
         Integer countAllNodes = countNode();
         Integer maxIndex = countAllNodes-1;
         if (index >= countAllNodes || index < 0) {
