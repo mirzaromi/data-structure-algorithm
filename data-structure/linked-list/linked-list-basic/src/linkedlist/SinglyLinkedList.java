@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class SinglyLinkedList {
     private Node head = null;
     private Node tail = null;
