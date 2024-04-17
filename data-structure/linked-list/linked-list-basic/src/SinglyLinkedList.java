@@ -180,6 +180,60 @@ public class SinglyLinkedList {
         }
     }
 
+    /**
+     * Set data from the tail
+     *
+     **/
+    public <T> void setNodeValueFromTail(T data) {
+        if (head == null) {
+            System.out.println("no data found");
+        } else {
+            tail.data = data;
+        }
+    }
+
+    /**
+     * Remove a data from the head
+     *
+     **/
+    public <T> void setNodeValueFromHead(T data) {
+        Node current = head;
+        if (head == null) {
+            System.out.println("no data found");
+        } else {
+            head.data = data;
+        }
+    }
+
+    /**
+     * Set node value at index
+     * @Param   index start from zero
+     **/
+    public <T> void setValueAtIndex(Integer index, T data) {
+        if (head == null) {
+            System.out.println("list is empty");
+        }
+        Integer countAllNodes = countNode();
+        Integer maxIndex = countAllNodes-1;
+        if (index >= countAllNodes || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            if (index == 0) {
+                setNodeValueFromHead(data);
+            } else if (index == maxIndex) {
+                setNodeValueFromTail(data);
+            } else {
+                Node currentNode = head;
+                int counter = 0;
+                while (currentNode != null && counter<index) {
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+                currentNode.data = data;
+            }
+        }
+    }
+
     private  <T> void showValue(Integer index, T value) {
         System.out.println("the value at index : " + index +  " is " + value);
     }
