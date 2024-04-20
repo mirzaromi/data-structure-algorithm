@@ -1,7 +1,8 @@
 package doublyLinkedList;
 
 public class DoublyLinkedList {
-    private Node head,tail;
+    private Node head;
+    private Node tail;
     public <T> void addNodeFromTail(T data){
         Node newNode = new Node(data);
 
