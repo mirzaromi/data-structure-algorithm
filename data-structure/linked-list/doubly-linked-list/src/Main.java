@@ -10,6 +10,7 @@ public class Main {
         linkedList.addNodeFromTail(5);
 
         linkedList.display();
+        linkedList.displayFromTail();
 
     }
 }

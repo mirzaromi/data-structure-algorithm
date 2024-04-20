@@ -24,6 +24,15 @@ public class DoublyLinkedList {
         }
     }
 
+    public void displayFromTail() {
+        Node current = tail;
+        checkLinkedListEmpty();
+        while (current!=null) {
+            System.out.println(current.getData());
+            current = current.getPrev();
+        }
+    }
+
     private void checkLinkedListEmpty() {
         if (head == null) {
             System.out.println("Doubly Linked List is Empty");
