@@ -84,7 +84,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public <T> void removeNodeAtIndex(Integer index) {
+    public void removeNodeAtIndex(Integer index) {
         Integer size = size();
         Integer maxIndex = size-1;
 
