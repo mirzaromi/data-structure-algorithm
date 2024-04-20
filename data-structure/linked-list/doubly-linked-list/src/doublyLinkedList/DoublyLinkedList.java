@@ -29,6 +29,44 @@ public class DoublyLinkedList {
         }
     }
 
+    public <T> void addNodeAtIndex(Integer index, T data) {
+        Integer size = size();
+        Integer maxIndex = size-1;
+
+        if (index > maxIndex || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            Node newNode = new Node(data);
+            Node current = head;
+            if (index == 0) {
+                addNodeFromHead(data);
+            } else if (index == maxIndex) {
+                addNodeFromTail(data);
+            } else {
+                Integer counter = 0;
+                while (counter < index-1 && current != null) {
+                    current = current.getNext();
+                    counter++;
+                }
+                newNode.setNext(current.getNext());
+                newNode.setPrev(current);
+                current.setNext(newNode);
+            }
+        }
+
+    }
+
+    public Integer size() {
+        Integer count = 0;
+        Node current = head;
+
+        while (current!=null) {
+            count++;
+            current = current.getNext();
+        }
+        return count;
+    }
+
     public void display() {
         Node current = head;
         checkLinkedListEmpty();

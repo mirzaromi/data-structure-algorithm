@@ -9,12 +9,13 @@ public class Main {
         linkedList.addNodeFromTail(4);
         linkedList.addNodeFromTail(5);
 
-        linkedList.addNodeFromHead(6);
+        linkedList.addNodeFromHead(0);
+        linkedList.addNodeAtIndex(2, 8);
 
 
         linkedList.display();
         System.out.println();
-        linkedList.displayFromTail();
+        System.out.println(linkedList.size());
 
     }
 }
