@@ -56,6 +56,60 @@ public class DoublyLinkedList {
 
     }
 
+    public void removeNodeFromTail() {
+        Node current = head;
+        if (head == null) {
+            System.out.println("no data found");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            while (current.getNext().getNext() != null) {
+                current = current.getNext();
+            }
+            current.setNext(null);
+            tail = current;
+        }
+    }
+
+    public void removeNodeFromHead() {
+        Node current = head;
+        if (head == null) {
+            System.out.println("no data found");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            current = current.getNext();
+            current.setPrev(null);
+            head = current;
+        }
+    }
+
+    public <T> void removeNodeAtIndex(Integer index) {
+        Integer size = size();
+        Integer maxIndex = size-1;
+
+        if (index > maxIndex || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            Node current = head;
+            if (index == 0) {
+                removeNodeFromHead();
+            } else if (index == maxIndex) {
+                removeNodeFromTail();
+            } else {
+                Integer counter = 0;
+                while (counter < index-1 && current != null) {
+                    current = current.getNext();
+                    counter++;
+                }
+                Node nextAfterRemovedNode = current.getNext().getNext();
+                current.setNext(nextAfterRemovedNode);
+                nextAfterRemovedNode.setPrev(current);
+            }
+        }
+
+    }
+
     public Integer size() {
         Integer count = 0;
         Node current = head;

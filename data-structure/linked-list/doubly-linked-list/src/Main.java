@@ -12,10 +12,15 @@ public class Main {
         linkedList.addNodeFromHead(0);
         linkedList.addNodeAtIndex(2, 8);
 
+        linkedList.removeNodeFromTail();
+        linkedList.removeNodeFromHead();
+        linkedList.removeNodeAtIndex(2);
 
         linkedList.display();
         System.out.println();
         System.out.println(linkedList.size());
+        System.out.println();
+        linkedList.displayFromTail();
 
     }
 }
