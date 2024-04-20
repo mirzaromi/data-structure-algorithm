@@ -158,7 +158,6 @@ public class DoublyLinkedList {
                 current.setNext(newNode);
             }
         }
-
     }
 
     public Integer size() {
@@ -194,5 +193,43 @@ public class DoublyLinkedList {
         if (head == null) {
             System.out.println("Doubly Linked List is Empty");
         }
+    }
+
+    public void findHeadValue() {
+        showValue(0, head.getData());
+    }
+
+    public void findTailValue() {
+        showValue(size()-1, tail.getData());
+    }
+
+    public void findValueAtIndex(Integer index) {
+        if (head == null) {
+            System.out.println("list is empty");
+        }
+
+        Integer countAllNodes = size();
+        Integer maxIndex = countAllNodes-1;
+        if (index >= countAllNodes || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            if (index == 0) {
+                showValue(index, head.getData());
+            } else if (index == maxIndex) {
+                showValue(index, tail.getData());
+            } else {
+                Node currentNode = head;
+                int counter = 0;
+                while (currentNode != null && counter<index) {
+                    currentNode = currentNode.getNext();
+                    counter++;
+                }
+                showValue(index, currentNode.getData());
+            }
+        }
+    }
+
+    private  <T> void showValue(Integer index, T data) {
+        System.out.println("the value at index : " + index +  " is " + data);
     }
 }

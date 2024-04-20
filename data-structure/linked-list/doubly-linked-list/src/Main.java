@@ -30,5 +30,9 @@ public class Main {
         System.out.println();
         linkedList.displayFromTail();
 
+        linkedList.findHeadValue();
+        linkedList.findTailValue();
+        linkedList.findValueAtIndex(2);
+
     }
 }
