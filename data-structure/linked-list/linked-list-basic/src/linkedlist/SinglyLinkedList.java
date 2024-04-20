@@ -270,6 +270,19 @@ public class SinglyLinkedList {
     public Node getTail() {
         return tail;
     }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
+    public void setHeadAndTail(Node head, Node tail) {
+        this.head = head;
+        this.tail = tail;
+    }
 }
 
 
