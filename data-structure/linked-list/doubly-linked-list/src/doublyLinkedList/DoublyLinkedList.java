@@ -107,6 +107,57 @@ public class DoublyLinkedList {
                 nextAfterRemovedNode.setPrev(current);
             }
         }
+    }
+
+    public <T> void setNodeFromHead(T data) {
+        if (head == null) {
+            System.out.println("Doubly Linked List is Empty");
+        } else {
+            Node newNode = new Node(data);
+            newNode.setNext(head.getNext());
+            head.getNext().setPrev(newNode);
+            head = newNode;
+        }
+    }
+
+    public <T> void setNodeFromTail(T data) {
+        if (head == null) {
+            System.out.println("Doubly Linked List is Empty");
+        } else {
+            Node newNode = new Node(data);
+            newNode.setPrev(tail.getPrev());
+            tail.getPrev().setNext(newNode);
+            tail = newNode;
+        }
+    }
+
+    public <T> void setNodeAtIndex(Integer index, T data) {
+        Integer size = size();
+        Integer maxIndex = size-1;
+
+        if (index > maxIndex || index < 0) {
+            System.out.println("the minimum index is " + 0 + " and the maximum index is " + maxIndex);
+        } else {
+            Node newNode = new Node(data);
+            Node current = head;
+            if (index == 0) {
+                setNodeFromHead(data);
+            } else if (index == maxIndex) {
+                setNodeFromTail(data);
+            } else {
+                Integer counter = 0;
+                while (counter < index-1 && current != null) {
+                    current = current.getNext();
+                    counter++;
+                }
+                Node nextAfterSetNode = current.getNext().getNext();
+
+                newNode.setNext(current.getNext().getNext());
+                newNode.setPrev(current);
+                nextAfterSetNode.setPrev(newNode);
+                current.setNext(newNode);
+            }
+        }
 
     }
 

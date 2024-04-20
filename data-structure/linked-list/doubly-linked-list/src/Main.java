@@ -8,13 +8,21 @@ public class Main {
         linkedList.addNodeFromTail(3);
         linkedList.addNodeFromTail(4);
         linkedList.addNodeFromTail(5);
+        linkedList.addNodeFromTail(6);
+        linkedList.addNodeFromTail(7);
 
         linkedList.addNodeFromHead(0);
+        linkedList.addNodeFromTail(8);
         linkedList.addNodeAtIndex(2, 8);
 
+        linkedList.removeNodeAtIndex(2);
         linkedList.removeNodeFromTail();
         linkedList.removeNodeFromHead();
-        linkedList.removeNodeAtIndex(2);
+
+
+        linkedList.setNodeFromHead(12);
+        linkedList.setNodeFromTail(13);
+        linkedList.setNodeAtIndex(2, 10);
 
         linkedList.display();
         System.out.println();
