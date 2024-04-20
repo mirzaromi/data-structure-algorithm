@@ -16,6 +16,19 @@ public class DoublyLinkedList {
         }
     }
 
+    public <T> void addNodeFromHead(T data){
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = tail = newNode;
+        } else  {
+            head.setPrev(newNode);
+            newNode.setNext(head);
+            head = newNode;
+            head.setPrev(null);
+        }
+    }
+
     public void display() {
         Node current = head;
         checkLinkedListEmpty();

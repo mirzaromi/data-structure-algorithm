@@ -9,7 +9,11 @@ public class Main {
         linkedList.addNodeFromTail(4);
         linkedList.addNodeFromTail(5);
 
+        linkedList.addNodeFromHead(6);
+
+
         linkedList.display();
+        System.out.println();
         linkedList.displayFromTail();
 
     }
